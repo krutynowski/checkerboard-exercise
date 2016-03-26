@@ -1,8 +1,17 @@
 //create and array with hex color codes codes
 //use math floor and  math.random to generate random colors  
 
+var audio = new Audio('monk.mp3');
+audio.loop = true;
+audio.play();
 
+
+
+// function rerun(){
 var board = document.getElementsByTagName('body')[0]; //create the board by targeting the body, 0 sets the  
+
+// var intervalID = window.setInterval(getRandomColor, 1);
+
 
 
 function getRandomColor() {
@@ -11,9 +20,13 @@ function getRandomColor() {
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
-  return color;
 
+  return color;
 }
+
+
+ // getRandomColor()=shuffle(getRandomColor);
+
 
 for (var i = 0; i < 81; i++) { //81 gives me a 9/9 spaces board 
   var square = document.createElement('div');
@@ -24,15 +37,31 @@ for (var i = 0; i < 81; i++) { //81 gives me a 9/9 spaces board
 
   if (i % 2 === 0) { //if number is even color A else color B
     square.style.backgroundColor = getRandomColor();
+    
 
   } else {
     square.style.backgroundColor = getRandomColor();
+   
   }
 
   board.appendChild(square); // appending the squares to the board 
-
 }
 
+
+setTimeout(function() {
+  window.location.reload();
+}, 2000);
+
+ // setInterval(rerun(), 1000);
+// setInterval(getRandomColor(), 2000);
+
+
+// setInterval(function() { 
+//     document.square.style.backgroundColor = getRandomColor(); //() to execute the function!
+// }, 1000);
+
+
+//var intervalID = window.setInterval(refresh(), 2000);
 // '#' + (function co(lor){   
 // return (lor += [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f']
 //   [Math.floor(Math.random()*16)]) && (lor.length == 6) ?  lor : co(lor); })('');
