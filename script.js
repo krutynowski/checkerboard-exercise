@@ -5,6 +5,8 @@
 
 
 var board = document.getElementsByTagName('body')[0]; //create the board by targeting the body, 0 sets the  
+board.style.background = "repeating-radial-gradient(teal, purple 10%, fuchsia 20%)";
+//'createGradient(#000000 #c50106 #f5f100 #ffffff)'
 
 for (var i = 0; i < 81; i++) { //81 gives me a 9/9 spaces board 
   var square = document.createElement('div');
@@ -16,16 +18,18 @@ for (var i = 0; i < 81; i++) { //81 gives me a 9/9 spaces board
 
   if (i % 2 === 0) { //if number is even color A else color B
     square.style.backgroundColor = '#8177A9';
+    square.style.opacity = "0.5";
 
   } else {
     square.style.backgroundColor = '#4198BF';
+    square.style.opacity = "0.5";
   }
 
   board.appendChild(square); // appending the squares to the board 
 
 }
 
-document.body.appendChild(body);
+
 
 
 //  squere.style.borderColor = "red";
