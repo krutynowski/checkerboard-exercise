@@ -30,6 +30,7 @@ function getRandomColor() {
 
 for (var i = 0; i < 81; i++) { //81 gives me a 9/9 spaces board 
   var square = document.createElement('div');
+  square.className = 'square';
 
   square.style.width = '11.1%';
   square.style.paddingBottom = '11.1%';
@@ -47,9 +48,20 @@ for (var i = 0; i < 81; i++) { //81 gives me a 9/9 spaces board
   board.appendChild(square); // appending the squares to the board 
 }
 
+function refreshSquare() {
+  var squares = document.getElementsByClassName('square');
+  console.log(squares);
 
-setTimeout(function() {
-  window.location.reload();
+  for (var j = 0; j < squares.length; j++) { //81 gives me a 9/9 spaces board 
+    squares[j].style.backgroundColor = getRandomColor();
+  }
+}
+
+setInterval(function() {
+  // window.location.reload();
+  // console.log(document);
+  // document.square.style.backgroundColor = getRandomColor();
+  refreshSquare();
 }, 2000);
 
  // setInterval(rerun(), 1000);
